@@ -26,10 +26,7 @@
                                 <td>
                                     @auth
                                         <form action="{{ route('pinjam_buku') }}" method="post">
-                                            @php
-                                            $id = Auth::user()->id;
-                                            @endphp
-                                            <input type="hidden" name="id" value="{{ $id }}">
+                                            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
                                             <input type="hidden" name="bookId" value="{{ $item->bookId }}">
                                             <input type="submit" class="btn btn-primary" value="Pinjam">
                                             @csrf

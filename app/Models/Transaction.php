@@ -12,6 +12,16 @@ class Transaction extends Model
     protected $table = 'transaksi';
 
     protected $fillable = [
-        'bookId', 'memberId', 'isVerified', 'isReturned', 'tgl_kembali', 'denda'
+        'bookId', 'userId', 'isVerified', 'isReturned', 'tgl_kembali', 'denda'
     ];
+
+    public function buku()
+    {
+        return $this->belongsTo('App\Models\Book', 'bookId', 'bookId');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'userId');
+    }
 }

@@ -16,4 +16,9 @@ class Book extends Model
     {
         return $this->belongsTo('App\Models\Penulis', 'penulisId', 'penulisId');
     }
+
+    public function transaksi()
+    {
+        return $this->hasMany('App\Models\Transaction', 'bookId', 'bookId');
+    }
 }

@@ -34,9 +34,13 @@ Route::prefix('admin')->middleware('auth:admin')->group(function() {
     Route::get('/kelola_buku', 'BukuController@index')->name('admin.kelola_buku');
     Route::get('/tambah_buku', 'BukuController@showTambahBukuForm')->name('admin.tambah_buku');
     Route::post('/tambah_buku', 'BukuController@store')->name('admin.tambah_buku.submit');
+    Route::get('/request_pinjam', 'TransaksiController@indexRequest')->name('admin.request');
+    Route::post('/verif_pinjam/{id}', 'TransaksiController@verifTransaction')->name('admin.request.verif');
+    Route::get('/laporan_peminjaman', 'TransaksiController@indexByAdmin')->name('admin.reports');
 });
 
 Route::prefix('user')->middleware('auth')->group(function() {
     Route::get('/history/{id}', 'TransaksiController@showByUserId')->name('user.history');
     Route::get('/lihat_buku', 'BukuController@indexByUser')->name('user.lihat_buku');
+    Route::post('/kembalikan_buku/{id}', 'TransaksiController@kembalikanPinjaman')->name('user.transaction.return');
 });
