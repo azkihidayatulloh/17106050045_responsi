@@ -11,4 +11,9 @@ class Penulis extends Model
     protected $fillable = [
         'penulisName'
     ];
+
+    public function buku()
+    {
+        return $this->hasMany('App\Models\Book', 'penulisId', 'penulisId');
+    }
 }

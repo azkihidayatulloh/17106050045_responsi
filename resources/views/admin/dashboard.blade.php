@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('admin.sidebar')
 
-@section('content')
+@section('sidebar-content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-11">
             <div class="card">
-                <div class="card-header">ADMIN Dashboard</div>
+                <div class="card-header">Admin Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in as ADMIN!
+                    Selamat datang Admin!
                 </div>
             </div>
         </div>

@@ -11,4 +11,9 @@ class Book extends Model
     protected $fillable = [
         'bookTitle', 'penulisId', 'quantity'
     ];
+
+    public function penulis()
+    {
+        return $this->belongsTo('App\Models\Penulis', 'penulisId', 'penulisId');
+    }
 }

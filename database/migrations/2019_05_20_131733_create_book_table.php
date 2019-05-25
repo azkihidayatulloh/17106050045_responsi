@@ -18,7 +18,7 @@ class CreateBookTable extends Migration
             $table->string('bookTitle', 100);
             $table->integer('penulisId');
             $table->integer('quantity');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
