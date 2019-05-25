@@ -14,7 +14,7 @@ class CreatePenulisTable extends Migration
     public function up()
     {
         Schema::create('penulis', function (Blueprint $table) {
-            $table->string('penulisId', 10)->primary('penulis_pk');
+            $table->integer('penulisId')->autoIncrement();
             $table->string('penulisName', 100);
             $table->timestamps();
             $table->softDeletes();

@@ -14,10 +14,11 @@ class CreateBookTable extends Migration
     public function up()
     {
         Schema::create('book', function (Blueprint $table) {
-            $table->string('bookId', 10)->primary('book_pk');
+            $table->integer('bookId')->autoIncrement();
             $table->string('bookTitle', 100);
-            $table->string('penulisId', 10);
+            $table->integer('penulisId');
             $table->integer('quantity');
+            $table->string('image_url');
             $table->timestamps();
             $table->softDeletes();
         });

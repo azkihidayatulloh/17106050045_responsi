@@ -15,8 +15,8 @@ class CreateTransaksiTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('transactionId');
-            $table->string('bookId', 10);
-            $table->string('memberId', 10);
+            $table->integer('bookId');
+            $table->integer('userId');
             $table->boolean('isVerified')->default(false);
             $table->boolean('isReturned')->default(false);
             $table->date('tgl_kembali');
